@@ -188,17 +188,8 @@ th {
   transition: 0.2s;
 }..language-switch{
 
-  position:fixed;
+  position:relative;
 
-  top:15px;
-
-  right:20px;
-
-  display:flex;
-
-  gap:8px;
-
-  z-index:9999;
 }
 }
 
@@ -306,4 +297,19 @@ th {
   color:#64748b !important;
 
   margin-top:4px !important;
+}.header{
+  position:static !important;
+  display:flex;
+  align-items:center;
+  gap:20px;
+  padding:20px 30px;
+  background:#edf2f7;
+  margin-bottom:20px;
+  box-shadow:none;
+}
+
+.container{
+  max-width:1600px;
+  margin:auto;
+  padding:20px;
 }
