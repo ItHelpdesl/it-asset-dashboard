@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản lý thiết bị CNTT</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+<div class="language-switch">
+
+  <button onclick="setLanguage('vi')">
+    🇻🇳 VI
+  </button>
+
+  <button onclick="setLanguage('en')">
+    🇺🇸 EN
+  </button>
+
+</div>
+    <div class="header">
+<img src="logo.png" class="logo">
+      <div>
+        <h1 id="titleText">Quản lý thiết bị CNTT</h1>
+        <p class="subtitle">IT Asset Management System</p>
+      </div>
+    </div>
+
+    <div class="card-grid">
+
+      <div class="card" onclick="filterByCard('all')">
+        <p>Tổng thiết bị</p>
+        <h2 id="totalCount">0</h2>
+        <span>Computer</span>
+      </div>
+
+      <div class="card green" onclick="filterByCard('running')">
+      <p id="runningText">Đang hoạt động</p>
+        <h2 id="runningCount">0</h2>
+        <span>Running</span>
+      </div>
+
+      <div class="card red" onclick="filterByCard('itserver')">
+      <p id="serverText">IT Server</p>
+        <h2 id="offCount">0</h2>
+        <span>Chưa bàn giao</span>
+      </div>
+
+      <div class="card orange" onclick="filterByCard('notassigned')">
+       <p id="notAssignedText">Chưa bàn giao</p>
+        <h2 id="notAssignedCount">0</h2>
+        <span>Not assigned</span>
+      </div>
+
+      <div class="card red" onclick="filterByCard('broken')">
+       <p id="brokenText">Máy hỏng</p>
+        <h2 id="brokenCount">0</h2>
+        <span>Broken</span>
+      </div>
+
+      <div class="card orange" onclick="filterByCard('repairing')">
+       <p id="repairingText">Đang sửa chữa</p>
+        <h2 id="repairingCount">0</h2>
+        <span>Repairing</span>
+      </div>
+
+    </div>
+
+    <div class="table-box" id="tableBox" style="display:none;">
+      <h2 id="tableTitle">Danh sách máy tính</h2>
+
+      <input 
+        type="text" 
+        id="searchInput" 
+        placeholder="Tìm tên, SN, MAC, mã nhân viên..."
+      >
+
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Device</th>
+            <th>Type</th>
+            <th>Model</th>
+            <th>SN</th>
+            <th>MAC</th>
+            <th>User</th>
+            <th>EmployeeID</th>
+            <th>Department</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+
+        <tbody id="computerTable"></tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
