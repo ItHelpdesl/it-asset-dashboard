@@ -41,6 +41,45 @@ function csvToArray(csv) {
 }
 
 function updateDashboard(data) {
+	  function typeSummary(list){
+    const laptop = list.filter(item =>
+      item["Type"] &&
+      item["Type"].toLowerCase() === "laptop"
+    ).length;
+
+    const desktop = list.filter(item =>
+      item["Type"] &&
+      item["Type"].toLowerCase() === "desktop"
+    ).length;
+
+    return `Laptop: ${laptop} | Desktop: ${desktop}`;
+  }
+
+  const runningList = data.filter(item =>
+    item["Status"] &&
+    item["Status"].toLowerCase() === "running"
+  );
+
+  const serverList = data.filter(item =>
+    item["Username"] &&
+    item["Username"].toLowerCase().includes("server")
+  );
+
+  const brokenList = data.filter(item =>
+    item["Status"] &&
+    item["Status"].toLowerCase() === "broken"
+  );
+
+  const repairingList = data.filter(item =>
+    item["Status"] &&
+    item["Status"].toLowerCase() === "repairing"
+  );
+
+  document.getElementById("totalTypeCount").innerText = typeSummary(data);
+  document.getElementById("runningTypeCount").innerText = typeSummary(runningList);
+  document.getElementById("serverTypeCount").innerText = typeSummary(serverList);
+  document.getElementById("brokenTypeCount").innerText = typeSummary(brokenList);
+  document.getElementById("repairingTypeCount").innerText = typeSummary(repairingList);
 
   const total = data.length;
 
