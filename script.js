@@ -1,79 +1,66 @@
 console.log("JS OK");
 
 let computers = [];
+let currentList = [];
 
 fetch("may-tinh.csv")
   .then(response => response.text())
   .then(data => {
-
     computers = csvToArray(data);
-
-    console.log(computers);
-
     updateDashboard(computers);
   });
 
 function csvToArray(csv) {
-
   const lines = csv.trim().split("\n");
-
-  const headers = lines[0]
-    .split(",")
-    .map(h => h.trim());
+  const headers = lines[0].split(",").map(h => h.trim());
 
   return lines.slice(1).map(line => {
-
     const values = line.split(",");
-
     let item = {};
 
     headers.forEach((header, index) => {
-
-      item[header] =
-        values[index]
-        ? values[index].trim()
-        : "";
-
+      item[header] = values[index] ? values[index].trim() : "";
     });
 
     return item;
   });
 }
 
+function getStatus(item) {
+  return (item["Status"] || "").trim().toLowerCase();
+}
+
+function getUsername(item) {
+  return (item["User"] || "").trim().toLowerCase();
+}
+}
+
+function getType(item) {
+  return (item["Type"] || "").trim().toLowerCase();
+}
+
 function updateDashboard(data) {
-	  function typeSummary(list){
-    const laptop = list.filter(item =>
-      item["Type"] &&
-      item["Type"].toLowerCase() === "laptop"
-    ).length;
-
-    const desktop = list.filter(item =>
-      item["Type"] &&
-      item["Type"].toLowerCase() === "desktop"
-    ).length;
-
-    return `Laptop: ${laptop} | Desktop: ${desktop}`;
-  }
-
-  const runningList = data.filter(item =>
-    item["Status"] &&
-    item["Status"].toLowerCase() === "running"
-  );
+  const runningList = data.filter(item => getStatus(item) === "running");
 
   const serverList = data.filter(item =>
-    item["Username"] &&
-    item["Username"].toLowerCase().includes("server")
+    getUsername(item) === "server" &&
+    getStatus(item) === "offline"
   );
 
-  const brokenList = data.filter(item =>
-    item["Status"] &&
-    item["Status"].toLowerCase() === "broken"
-  );
+  const brokenList = data.filter(item => getStatus(item) === "broken");
+  const repairingList = data.filter(item => getStatus(item) === "repairing");
 
-  const repairingList = data.filter(item =>
-    item["Status"] &&
-    item["Status"].toLowerCase() === "repairing"
-  );
+  const total = data.length;
+  const running = runningList.length;
+  const off = serverList.length;
+  const broken = brokenList.length;
+  const repairing = repairingList.length;
+
+  document.getElementById("totalCount").textContent = total;
+document.getElementById("runningCount").textContent = running;
+document.getElementById("offCount").textContent = off;
+document.getElementById("brokenCount").textContent = brokenList.length;
+document.getElementById("repairingCount").textContent = repairing;
 
   document.getElementById("totalTypeCount").innerText = typeSummary(data);
   document.getElementById("runningTypeCount").innerText = typeSummary(runningList);
@@ -81,93 +68,41 @@ function updateDashboard(data) {
   document.getElementById("brokenTypeCount").innerText = typeSummary(brokenList);
   document.getElementById("repairingTypeCount").innerText = typeSummary(repairingList);
 
-  const total = data.length;
+  updateMiniBar(total, running, off, broken, repairing);
+}
 
-  const running = data.filter(item => {
+function typeSummary(list) {
+  const laptop = list.filter(item => getType(item) === "laptop").length;
+  const desktop = list.filter(item => getType(item) === "desktop").length;
 
-    const status =
-      (item["Status"] || "")
-      .trim()
-      .toLowerCase();
+  return `Laptop: ${laptop} | Desktop: ${desktop}`;
+}
 
-    return status === "running";
+function updateMiniBar(total, running, off, broken, repairing) {
+  if (!document.getElementById("runningBar")) return;
 
-  }).length;
+  const runningPercent = total ? Math.round((running / total) * 100) : 0;
+  const offPercent = total ? Math.round((off / total) * 100) : 0;
+  const brokenPercent = total ? Math.round((broken / total) * 100) : 0;
+  const repairingPercent = total ? Math.round((repairing / total) * 100) : 0;
 
-  const off = data.filter(item => {
+  document.getElementById("runningBar").style.width = runningPercent + "%";
+  document.getElementById("offBar").style.width = offPercent + "%";
+  document.getElementById("brokenBar").style.width = brokenPercent + "%";
+  document.getElementById("repairingBar").style.width = repairingPercent + "%";
 
-    const username =
-      (item["Username"] || "")
-      .trim()
-      .toLowerCase();
-
-    const status =
-      (item["Status"] || "")
-      .trim()
-      .toLowerCase();
-
-    return username === "server"
-      && status === "offline";
-
-  }).length;
-
-  const notAssigned = data.filter(item => {
-
-    const username =
-      (item["Username"] || "")
-      .trim()
-      .toLowerCase();
-
-    return username === "server";
-
-  }).length;
-
-  const broken = data.filter(item => {
-
-    const status =
-      (item["Status"] || "")
-      .trim()
-      .toLowerCase();
-
-    return status === "broken";
-
-  }).length;
-
-  const repairing = data.filter(item => {
-
-    const status =
-      (item["Status"] || "")
-      .trim()
-      .toLowerCase();
-
-    return status === "repairing";
-
-  }).length;
-
-  document.getElementById("totalCount").innerText = total;
-
-  document.getElementById("runningCount").innerText = running;
-
-  document.getElementById("offCount").innerText = off;
-
-  document.getElementById("notAssignedCount").innerText = notAssigned;
-
-  document.getElementById("brokenCount").innerText = broken;
-
-  document.getElementById("repairingCount").innerText = repairing;
+  document.getElementById("runningPercent").innerText = runningPercent + "%";
+  document.getElementById("offPercent").innerText = offPercent + "%";
+  document.getElementById("brokenPercent").innerText = brokenPercent + "%";
+  document.getElementById("repairingPercent").innerText = repairingPercent + "%";
 }
 
 function renderTable(data) {
-
-  const tbody =
-    document.getElementById("computerTable");
-
+  const tbody = document.getElementById("computerTable");
   tbody.innerHTML = "";
 
   data.forEach(item => {
-
-    const row =
-      document.createElement("tr");
+    const row = document.createElement("tr");
 
     row.innerHTML = `
       <td>${item["No"] || ""}</td>
@@ -186,26 +121,7 @@ function renderTable(data) {
   });
 }
 
-document
-  .getElementById("searchInput")
-  .addEventListener("input", function () {
-
-    const keyword =
-      this.value.toLowerCase();
-
-    const filtered =
-      computers.filter(item => {
-
-        return Object
-          .values(item)
-          .join(" ")
-          .toLowerCase()
-          .includes(keyword);
-
-      });
-
-    renderTable(filtered);
-});function filterByCard(type) {
+function filterByCard(type) {
   let filtered = [];
   let title = "Danh sách máy tính";
 
@@ -215,105 +131,43 @@ document
   }
 
   if (type === "running") {
-    filtered = computers.filter(item => {
-      const status = (item["Status"] || "").trim().toLowerCase();
-      return status === "running";
-    });
-
+    filtered = computers.filter(item => getStatus(item) === "running");
     title = "Danh sách máy đang hoạt động";
   }
 
   if (type === "itserver") {
-    filtered = computers.filter(item => {
-      const username = (item["Username"] || "").trim().toLowerCase();
-      const status = (item["Status"] || "").trim().toLowerCase();
-
-      return username === "server" && status === "offline";
-    });
-
+    filtered = computers.filter(item =>
+      getUsername(item) === "server" &&
+      getStatus(item) === "offline"
+    );
     title = "Danh sách máy ở IT Server";
   }
 
-  if (type === "notassigned") {
-    filtered = computers.filter(item => {
-      const username = (item["Username"] || "").trim().toLowerCase();
-      return username === "server";
-    });
-
-    title = "Danh sách máy chưa bàn giao";
-  }
-
   if (type === "broken") {
-    filtered = computers.filter(item => {
-      const status = (item["Status"] || "").trim().toLowerCase();
-      return status === "broken";
-    });
-
+    filtered = computers.filter(item => getStatus(item) === "broken");
     title = "Danh sách máy hỏng";
   }
 
   if (type === "repairing") {
-    filtered = computers.filter(item => {
-      const status = (item["Status"] || "").trim().toLowerCase();
-      return status === "repairing";
-    });
-
+    filtered = computers.filter(item => getStatus(item) === "repairing");
     title = "Danh sách máy đang sửa chữa";
   }
 
+  currentList = filtered;
+
   document.getElementById("tableBox").style.display = "block";
   document.getElementById("tableTitle").innerText = title;
-
   document.getElementById("searchInput").value = "";
 
   renderTable(filtered);
-}function setLanguage(lang){
-
-  if(lang === "vi"){
-
-    document.getElementById("titleText")
-      .innerText = "Quản lý thiết bị CNTT";
-
-    document.getElementById("subtitleText")
-      .innerText = "IT Asset Management System";
-
-    document.getElementById("runningText")
-      .innerText = "Đang hoạt động";
-
-    document.getElementById("serverText")
-      .innerText = "IT Server";
-
-    document.getElementById("notAssignedText")
-      .innerText = "Chưa bàn giao";
-
-    document.getElementById("brokenText")
-      .innerText = "Máy hỏng";
-
-    document.getElementById("repairingText")
-      .innerText = "Đang sửa chữa";
-  }
-
-  if(lang === "en"){
-
-    document.getElementById("titleText")
-      .innerText = "IT Asset Management";
-
-    document.getElementById("subtitleText")
-      .innerText = "Computer Management System";
-
-    document.getElementById("runningText")
-      .innerText = "Running";
-
-    document.getElementById("serverText")
-      .innerText = "IT Server";
-
-    document.getElementById("notAssignedText")
-      .innerText = "Not Assigned";
-
-    document.getElementById("brokenText")
-      .innerText = "Broken Devices";
-
-    document.getElementById("repairingText")
-      .innerText = "Repairing";
-  }
 }
+
+document.getElementById("searchInput").addEventListener("input", function () {
+  const keyword = this.value.toLowerCase();
+
+  const filtered = currentList.filter(item =>
+    Object.values(item).join(" ").toLowerCase().includes(keyword)
+  );
+
+  renderTable(filtered);
+});

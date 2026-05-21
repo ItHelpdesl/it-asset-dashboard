@@ -3,79 +3,133 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <<title>Quản lý thiết bị CNTT</title>
 
-<!-- Font Awesome Icon -->
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-/>
+  <title>Quản lý thiết bị CNTT</title>
 
-<link rel="stylesheet" href="style.css">
+  <!-- Font Awesome Icon -->
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  >
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
   <div class="container">
 
-
-</div>
+    <!-- HEADER -->
     <div class="header">
-<img src="logo.png" class="logo">
+      <img src="logo.png" class="logo">
+
       <div>
         <h1 id="titleText">Quản lý thiết bị CNTT</h1>
         <p class="subtitle">IT Asset Management System</p>
       </div>
+
+      
     </div>
 
+    <!-- CARD GRID -->
     <div class="card-grid">
+	<div class="mini-chart-box">
 
-     <div class="card" onclick="filterByCard('all')">
-
-  <div class="card-title">
-    <p>Tổng thiết bị</p>
-    <i class="fa-solid fa-computer"></i>
+  <div class="mini-bar">
+    <label>Running</label>
+    <div class="bar-bg">
+      <div class="bar-fill green-bar" id="runningBar"></div>
+    </div>
+    <span id="runningPercent">0%</span>
   </div>
 
-  <h2 id="totalCount">0</h2>
+  <div class="mini-bar">
+    <label>IT Server</label>
+    <div class="bar-bg">
+      <div class="bar-fill red-bar" id="offBar"></div>
+    </div>
+    <span id="offPercent">0%</span>
+  </div>
 
-  <span>Computer</span>
+  <div class="mini-bar">
+    <label>Broken</label>
+    <div class="bar-bg">
+      <div class="bar-fill darkred-bar" id="brokenBar"></div>
+    </div>
+    <span id="brokenPercent">0%</span>
+  </div>
 
-  <div class="mini-count" id="totalTypeCount"></div>
+  <div class="mini-bar">
+    <label>Repairing</label>
+    <div class="bar-bg">
+      <div class="bar-fill orange-bar" id="repairingBar"></div>
+    </div>
+    <span id="repairingPercent">0%</span>
+  </div>
 
 </div>
 
+      <!-- Tổng thiết bị -->
+      <div class="card" onclick="filterByCard('all')">
+        <i class="fa-solid fa-computer card-icon blue-icon"></i>
+
+        <p>Tổng thiết bị</p>
+        <h2 id="totalCount">0</h2>
+        <span>Computer</span>
+
+        <div class="mini-count" id="totalTypeCount"></div>
+      </div>
+
+      <!-- Đang hoạt động -->
       <div class="card green" onclick="filterByCard('running')">
-      <p id="runningText">Đang hoạt động</p>
+        <i class="fa-solid fa-circle-check card-icon green-icon"></i>
+
+        <p id="runningText">Đang hoạt động</p>
         <h2 id="runningCount">0</h2>
         <span>Running</span>
-		<div class="mini-count" id="runningTypeCount"></div>
+
+        <div class="mini-count" id="runningTypeCount"></div>
       </div>
 
+      <!-- IT Server -->
       <div class="card red" onclick="filterByCard('itserver')">
-      <p id="serverText">IT Server</p>
+        <i class="fa-solid fa-server card-icon red-icon"></i>
+
+        <p id="serverText">IT Server</p>
         <h2 id="offCount">0</h2>
-        <span>Sẵn Sàng</span>
-		<div class="mini-count" id="serverTypeCount"></div>
+        <span>Sẵn sàng</span>
+
+        <div class="mini-count" id="serverTypeCount"></div>
       </div>
 
-
+      <!-- Máy hỏng -->
       <div class="card red" onclick="filterByCard('broken')">
-       <p id="brokenText">Máy hỏng</p>
+        <i class="fa-solid fa-triangle-exclamation card-icon red-icon"></i>
+
+        <p id="brokenText">Máy hỏng</p>
         <h2 id="brokenCount">0</h2>
         <span>Broken</span>
-		<div class="mini-count" id="brokenTypeCount"></div>
+
+        <div class="mini-count" id="brokenTypeCount"></div>
       </div>
 
+      <!-- Đang sửa chữa -->
       <div class="card orange" onclick="filterByCard('repairing')">
-       <p id="repairingText">Đang sửa chữa</p>
+        <i class="fa-solid fa-screwdriver-wrench card-icon orange-icon"></i>
+
+        <p id="repairingText">Đang sửa chữa</p>
         <h2 id="repairingCount">0</h2>
         <span>Repairing</span>
-		<div class="mini-count" id="repairingTypeCount"></div>
+
+        <div class="mini-count" id="repairingTypeCount"></div>
       </div>
 
     </div>
 
+    <!-- CHART -->
+
+    <!-- TABLE -->
     <div class="table-box" id="tableBox" style="display:none;">
       <h2 id="tableTitle">Danh sách máy tính</h2>
 
@@ -107,6 +161,10 @@
 
   </div>
 
-  <script src="script.js"></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- JS -->
+  <s<script src="script.js?v=3"></script>
 </body>
 </html>
