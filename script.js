@@ -3,98 +3,87 @@ console.log("JS OK");
 let computers = [];
 let currentList = [];
 
-fetch("may-tinh.csv")
-  .then(response => response.text())
-  .then(data => {
-    computers = csvToArray(data);
-    updateDashboard(computers);
+document.addEventListener("DOMContentLoaded", function () {
+  fetch("./may-tinh.csv?v=" + Date.now())
+    .then(r => r.text())
+    .then(csv => {
+      computers = csvToArray(csv);
+      currentList = computers;
+      updateDashboard(computers);
+      console.log("Loaded:", computers);
+    });
+
+  document.getElementById("searchInput").addEventListener("input", function () {
+    const key = this.value.toLowerCase();
+    renderTable(currentList.filter(x =>
+      Object.values(x).join(" ").toLowerCase().includes(key)
+    ));
   });
+});
 
 function csvToArray(csv) {
-  const lines = csv.trim().split("\n");
+  const lines = csv.trim().split(/\r?\n/);
   const headers = lines[0].split(",").map(h => h.trim());
 
   return lines.slice(1).map(line => {
     const values = line.split(",");
-    let item = {};
-
-    headers.forEach((header, index) => {
-      item[header] = values[index] ? values[index].trim() : "";
-    });
-
+    const item = {};
+    headers.forEach((h, i) => item[h] = values[i] ? values[i].trim() : "");
     return item;
   });
 }
 
-function getStatus(item) {
-  return (item["Status"] || "").trim().toLowerCase();
+function status(item) {
+  return (item.Status || "").trim().toLowerCase();
 }
 
-function getUsername(item) {
-  return (item["User"] || "").trim().toLowerCase();
-}
+function user(item) {
+  return (item.Username || "").trim().toLowerCase();
 }
 
-function getType(item) {
-  return (item["Type"] || "").trim().toLowerCase();
+function type(item) {
+  return (item.Type || "").trim().toLowerCase();
 }
 
 function updateDashboard(data) {
-  const runningList = data.filter(item => getStatus(item) === "running");
+  const running = data.filter(x => status(x) === "running");
+  const server = data.filter(x => user(x).includes("server") && status(x) === "offline");
+  const broken = data.filter(x => status(x) === "broken");
+  const repairing = data.filter(x => status(x) === "repairing");
 
-  const serverList = data.filter(item =>
-    getUsername(item) === "server" &&
-    getStatus(item) === "offline"
-  );
+  setText("totalCount", data.length);
+  setText("runningCount", running.length);
+  setText("offCount", server.length);
+  setText("brokenCount", broken.length);
+  setText("repairingCount", repairing.length);
 
-  const brokenList = data.filter(item => getStatus(item) === "broken");
-  const repairingList = data.filter(item => getStatus(item) === "repairing");
+  setText("totalTypeCount", typeSummary(data));
+  setText("runningTypeCount", typeSummary(running));
+  setText("serverTypeCount", typeSummary(server));
+  setText("brokenTypeCount", typeSummary(broken));
+  setText("repairingTypeCount", typeSummary(repairing));
 
-  const total = data.length;
-  const running = runningList.length;
-  const off = serverList.length;
-  const broken = brokenList.length;
-  const repairing = repairingList.length;
-
-  document.getElementById("totalCount").textContent = total;
-document.getElementById("runningCount").textContent = running;
-document.getElementById("offCount").textContent = off;
-document.getElementById("brokenCount").textContent = brokenList.length;
-document.getElementById("repairingCount").textContent = repairing;
-
-  document.getElementById("totalTypeCount").innerText = typeSummary(data);
-  document.getElementById("runningTypeCount").innerText = typeSummary(runningList);
-  document.getElementById("serverTypeCount").innerText = typeSummary(serverList);
-  document.getElementById("brokenTypeCount").innerText = typeSummary(brokenList);
-  document.getElementById("repairingTypeCount").innerText = typeSummary(repairingList);
-
-  updateMiniBar(total, running, off, broken, repairing);
+  updateMiniBar(data.length, running.length, server.length, broken.length, repairing.length);
 }
 
 function typeSummary(list) {
-  const laptop = list.filter(item => getType(item) === "laptop").length;
-  const desktop = list.filter(item => getType(item) === "desktop").length;
-
-  return `Laptop: ${laptop} | Desktop: ${desktop}`;
+  const laptop = list.filter(x => type(x) === "laptop").length;
+  const desktop = list.filter(x => type(x) === "desktop").length;
+  return "Laptop: " + laptop + " | Desktop: " + desktop;
 }
 
-function updateMiniBar(total, running, off, broken, repairing) {
-  if (!document.getElementById("runningBar")) return;
+function updateMiniBar(total, running, server, broken, repairing) {
+  setBar("runningBar", "runningPercent", total, running);
+  setBar("offBar", "offPercent", total, server);
+  setBar("brokenBar", "brokenPercent", total, broken);
+  setBar("repairingBar", "repairingPercent", total, repairing);
+}
 
-  const runningPercent = total ? Math.round((running / total) * 100) : 0;
-  const offPercent = total ? Math.round((off / total) * 100) : 0;
-  const brokenPercent = total ? Math.round((broken / total) * 100) : 0;
-  const repairingPercent = total ? Math.round((repairing / total) * 100) : 0;
-
-  document.getElementById("runningBar").style.width = runningPercent + "%";
-  document.getElementById("offBar").style.width = offPercent + "%";
-  document.getElementById("brokenBar").style.width = brokenPercent + "%";
-  document.getElementById("repairingBar").style.width = repairingPercent + "%";
-
-  document.getElementById("runningPercent").innerText = runningPercent + "%";
-  document.getElementById("offPercent").innerText = offPercent + "%";
-  document.getElementById("brokenPercent").innerText = brokenPercent + "%";
-  document.getElementById("repairingPercent").innerText = repairingPercent + "%";
+function setBar(barId, percentId, total, count) {
+  const percent = total ? Math.round(count / total * 100) : 0;
+  const bar = document.getElementById(barId);
+  if (bar) bar.style.width = percent + "%";
+  setText(percentId, percent + "%");
 }
 
 function renderTable(data) {
@@ -103,71 +92,51 @@ function renderTable(data) {
 
   data.forEach(item => {
     const row = document.createElement("tr");
-
     row.innerHTML = `
-      <td>${item["No"] || ""}</td>
-      <td>${item["Devicename"] || ""}</td>
-      <td>${item["Type"] || ""}</td>
-      <td>${item["Model"] || ""}</td>
-      <td>${item["SN"] || ""}</td>
-      <td>${item["MAC"] || ""}</td>
-      <td>${item["Username"] || ""}</td>
-      <td>${item["EmployeeID"] || ""}</td>
-      <td>${item["Department"] || ""}</td>
-      <td>${item["Status"] || ""}</td>
+      <td>${item.No || ""}</td>
+      <td>${item.Devicename || ""}</td>
+      <td>${item.Type || ""}</td>
+      <td>${item.Model || ""}</td>
+      <td>${item.Username || ""}</td>
+      <td>${item["EmployeeID"] || "-"}</td>
+      <td>${item.Department || ""}</td>
+      <td>${item.Status || ""}</td>
     `;
-
     tbody.appendChild(row);
   });
 }
 
-function filterByCard(type) {
-  let filtered = [];
-  let title = "Danh sách máy tính";
+function filterByCard(card) {
+  let data = computers;
+  let title = "Tất cả máy tính";
 
-  if (type === "all") {
-    filtered = computers;
-    title = "Tất cả máy tính";
-  }
-
-  if (type === "running") {
-    filtered = computers.filter(item => getStatus(item) === "running");
+  if (card === "running") {
+    data = computers.filter(x => status(x) === "running");
     title = "Danh sách máy đang hoạt động";
   }
 
-  if (type === "itserver") {
-    filtered = computers.filter(item =>
-      getUsername(item) === "server" &&
-      getStatus(item) === "offline"
-    );
+  if (card === "itserver") {
+    data = computers.filter(x => user(x).includes("server") && status(x) === "offline");
     title = "Danh sách máy ở IT Server";
   }
 
-  if (type === "broken") {
-    filtered = computers.filter(item => getStatus(item) === "broken");
+  if (card === "broken") {
+    data = computers.filter(x => status(x) === "broken");
     title = "Danh sách máy hỏng";
   }
 
-  if (type === "repairing") {
-    filtered = computers.filter(item => getStatus(item) === "repairing");
+  if (card === "repairing") {
+    data = computers.filter(x => status(x) === "repairing");
     title = "Danh sách máy đang sửa chữa";
   }
 
-  currentList = filtered;
-
+  currentList = data;
   document.getElementById("tableBox").style.display = "block";
-  document.getElementById("tableTitle").innerText = title;
-  document.getElementById("searchInput").value = "";
-
-  renderTable(filtered);
+  setText("tableTitle", title);
+  renderTable(data);
 }
 
-document.getElementById("searchInput").addEventListener("input", function () {
-  const keyword = this.value.toLowerCase();
-
-  const filtered = currentList.filter(item =>
-    Object.values(item).join(" ").toLowerCase().includes(keyword)
-  );
-
-  renderTable(filtered);
-});
+function setText(id, value) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = value;
+}

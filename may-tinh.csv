@@ -1,4 +1,4 @@
-﻿No,Devicename,Type,Model,Username,EmployeeID,Department ,Status
+﻿No,Devicename,Type,Model,Username,EmployeeID,Department,Status
 1,NEX_001,Laptop,Dell Inspiron 15 3511,Server,,IT,Offline
 2,NEX_002,Laptop,Dell Inspiron 15 3511,Hỏng,Hỏng,IT,Broken
 3,NEX_003,Desktop,HP Pro Tower 280 G9 PCI Desktop PC,Lê Đắc Nam,NV2301045,Utility-EHS,Running
