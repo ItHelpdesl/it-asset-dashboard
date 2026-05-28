@@ -43,7 +43,7 @@
 42,NEX_043,DesKtop,HP Pro SFF 280 G9 Desktop PC,IQC ( phòng tin cậy ),NV2306014,IQC,Running
 43,NEX_3D_IQC/NEX_044,Desktop,H310MHG,PQC ,PQC, PQC,Running
 44,NEX_045,Laptop,Dell Inc Vostro 3520,Lê Xuân Quỳnh,NV2505002,Production,Running
-45,NEX_046,Laptop,"SAMSUNG ELECTRONICS CO., LTD.",Server,,IT,Offline
+45,NEX_046,Laptop,"SAMSUNG ELECTRONICS CO., LTD.",Server,,,Offline
 46,NEX_047,Laptop,"SAMSUNG ELECTRONICS CO., LTD.",SẹoungKil,,PRESS,Running
 47,NEX_048,Laptop,"SAMSUNG ELECTRONICS CO., LTD.",Nguyễn Bá Dũng,NV2505007,Production,Running
 48,NEX_049,Laptop,"SAMSUNG ELECTRONICS CO., LTD.",Ryu JI Seung,CS,CS,Running
@@ -78,7 +78,7 @@
 77,NEX_HP_023,Desktop, HP 280 Pro G6 Microtower PC,Kho Phế Liệu Press,,SCM,Running
 78,NEX_HP_024,Laptop,Dell Inc Inspiron 15 3511,Đặng thị tuyến,NV2301057,Sale,Running
 79,NEX_MES_001,Desktop, LENOVO 11T000AXVA,Ngô Quang Nhị,NV202305029,SCM,Running
-80,NEX_MES_002,Desktop, LENOVO 11T000AXVA,Server,,IT,Offline
+80,NEX_MES_002,Desktop, LENOVO 11T000AXVA,QC Đóng gói ,,QC,Offline
 81,NEX_MES_003,Desktop, LENOVO 11T000AXVA,Nguyễn Phú Thanh,NV2301027,PRESS,Running
 82,NEX_MES_004,Desktop, LENOVO 11T000AXVA,Hoàng Xuân Bắc,NV2302063,PQC,Running
 83,NEX_MES_005,Desktop, LENOVO 11T000AXVA,LINE 9,Line ,OQC,Running
@@ -102,7 +102,7 @@
 101,NEX_MES_023,Desktop, LENOVO 11T000AXVA,Khổng Văn lợi ,NV2306025,Tech.Support,Running
 102,NEX_MES_024,Desktop, LENOVO 11T000AXVA,Cổng bảo vệ,,Utility-EHS,Running
 103,NEX_MES_025,Desktop, LENOVO 11T000AXVA,SmartRoom T2,SmartRoom T2,SmartRoom T2,Running
-104,NEX_MES_026,Desktop, LENOVO 11T000AXVA,Server Bartender ,,IT,Offline
+104,NEX_MES_026,Desktop, LENOVO 11T000AXVA,Server Bartender ,,IT,Running
 105,NEX_MES_027,Desktop, LENOVO 11T000AXVA,Server,,IT,Offline
 106,NEX_MES_028,Desktop, LENOVO 11T000AXVA,Nguyễn Văn Cường,NV2302022,PQC,Running
 107,NEX_MES_029,Desktop, LENOVO 11T000AXVA,Kho Press,Kho Press,Kho Press,Running
