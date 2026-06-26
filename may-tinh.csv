@@ -56,8 +56,8 @@
 55,NEX_HP_002,Laptop,Dell inc Inspiron 15 3511,Server ,,IT,Offline
 56,NEX_HP_003,Laptop,Dell Inc Latitude 3520, Nguyễn Thị Loan,NV2304016,QC,Running
 57,NEX_HP_004,Laptop,Dell Inc Latitude 3520,Bùi Ngọc Chư,NV2301037,R&D,Running
-58,NEX_HP_005,Laptop,Dell Inc Latitude 3520,SI ROOM,,,Running
-59,NEX_HP_006,Laptop,Dell Inc Latitude 3521,Nguyễn Văn Quý,NV2301015,Production,Running
+58,NEX_HP_005,Laptop,Dell Inc Latitude 3520,SI ROOM,Vender,QC,Running
+59,NEX_HP_006,Laptop,Dell Inc Latitude 3521,Nguyễn Văn Quý,Server,IT,Running
 60,NEX_HP_007,Laptop,Dell Inc Inspiron 15 3511,Nguyễn Thị Hảo,NV2302062,OQC,Running
 61,NEX_HP_008,Laptop,  HP Pavilion Laptop 15-eg2xxx,Nguyễn Thị Phương (HR_GA),NV2301046,HR_GA,Running
 62,NEX_HP_009,Laptop,HP Pavilion Laptop 15-eg2xxx,Phạm Thị Thúy,NV2301023,Accouting,Running
@@ -65,12 +65,12 @@
 64,NEX_HP_011,Laptop,Dell Inc Inspiron 15 3511,Nguyễn Thị Hương,NV2305058,Production,Running
 65,NEX_HP_012,Laptop,Dell Inc Inspiron 15 3511,Ngô Thị Ngát,NV2408001,R&D,Running
 66,NEX_HP_013,Laptop,Dell Inc Inspiron 15 3511,Lương Quốc Trường,NV2308011,Tech.Support,Running
-67,NEX_IQC_ADHEASION/NEX_HP_014,Desktop,Samsung SSD 840 EVO 120GB (111GB),IQC ( phòng tin cậy ),IQC ( phòng tin cậy ),IQC ( phòng tin cậy ),Running
+67,NEX_IQC_ADHEASION/NEX_HP_014,Desktop,Samsung SSD 840 EVO 120GB,IQC ( phòng tin cậy ),IQC ( phòng tin cậy ),IQC ( phòng tin cậy ),Running
 68,NEX_IQC_ADHEASION_H/NEX_HP_015,Desktop,SAMSUNG ELECTRONICS.500TEA/500SEA,IQC ( phòng tin cậy ),IQC ( phòng tin cậy ),IQC ( phòng tin cậy ),Running
 69,NEX_IQC_WATERMACHIN/NEX_016,Desktop,SAMSUNG ELECTRONICS.500TEA/500SEA,IQC ( phòng tin cậy ),IQC ( phòng tin cậy ),IQC ( phòng tin cậy ),Running
 70,NEX_HP_ACC,Laptop,Dell inc Inspiron 15 3511,Nguyễn Thị Thắng,NV2307064,Kế toán,Running
 71,NEX_X-RAY-PC,Desktop,Dell Inc.  OptiPlex 7010,IQC ( phòng tin cậy ),,QC,Running
-72,NEX_HP_018,Desktop,  To Be Filled By O.E.M.,Nguyễn Đăng Vũ,NV2503002,PRESS,Running
+72,NEX_HP_018,Desktop,  To Be Filled By,Nguyễn Đăng Vũ,NV2503002,PRESS,Running
 73,NEX_HP_019,Desktop,HP 280 Pro G6 Microtower PC,Nguyễn Trọng Anh,NV2304001,Utility-EHS,Running
 74,NEX_HP_020,Desktop,Dell Inc Vostro 3710 0AD1,Phạm Thị Hằng,NV2302001,IQC,Running
 75,NEX_HP_021,Desktop,Dell Inc Vostro 3681 09B4,Nguyễn Văn Hưng,NV2404002,PRESS,Running
