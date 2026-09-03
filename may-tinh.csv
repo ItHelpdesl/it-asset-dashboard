@@ -5,7 +5,7 @@
 4,NEX_004,Desktop,HP Pro Tower 280 G9 PCI Desktop PC,Nguyễn Ngọc Phú,NV2301043,Utility-EHS,Running
 5,NEX_005,Laptop,Dell Inspiron 15 3511,Nguyễn Thị Thái (HR-GA),NV2301056,Accouting,Running
 6,NEX_006,Laptop,Dell Inspiron 15 3511,Nguyễn Duy Trường,NV2301035,Utility-EHS,Running
-7,NEX_007,Laptop,SAMSUNG ELECTRONICS ,Server,,IT,Offline
+7,NEX_007,Laptop,SAMSUNG ELECTRONICS ,KIM HYUN IL,NV-221202,Tech_Support,Offline
 8,NEX_008,Laptop,SAMSUNG ELECTRONICS ,Hoàng Văn Đăng ,NV2305053,IT,Running
 9,NEX_009,Desktop,HP Pro SFF 280 G9 Desktop PC,Màn hình SCM,,SCM,Running
 10,NEX_010,Desktop,HP Pro SFF 280 G9 Desktop PC,( khái báo hải quan),,SCM,Running
@@ -17,7 +17,7 @@
 16,NEX_016,Laptop,Vostro 15 3510,Nguyễn Gia Toàn,NV2301054,Tech-Support,Running
 17,NEX_017,Laptop,Dell Inc Inspiron 15 3520, Nguyễn Văn Nam,NV2409005,R&D,Running
 18,NEX_018,Laptop,Dell Inc Inspiron 15 3520, Nguyễn Thị Hạnh,NV2306055, QA,Running
-19,NEX_019,Laptop,SAMSUNG ELECTRONICS ,Server,,IT,Offline
+19,NEX_019,Laptop,SAMSUNG ELECTRONICS ,Kang Hee Hyung,,QC,Running
 20,NEX_020,Desktop,HP Pro SFF 280 G9 Desktop PC,Nguyễn Văn Thảo,NV2301002,Tech.Support,Running
 21,NEX_021,Laptop,Dell Inc Vostro 15 3510,Phan Ngọc Quân,NV2301052,R&D,Running
 22,NEX_022,Desktop,HP Pro SFF 280 G9 Desktop PC,Nguyễn Thị Hằng,NV2302004,R&D,Running
@@ -43,7 +43,7 @@
 42,NEX_043,DesKtop,HP Pro SFF 280 G9 Desktop PC,IQC ( phòng tin cậy ),NV2306014,IQC,Running
 43,NEX_3D_IQC,Desktop,H310MHG,PQC ,PQC, PQC,Running
 44,NEX_045,Laptop,Dell Inc Vostro 3520,Lê Xuân Quỳnh,NV2505002,Production,Running
-45,NEX_046,Laptop,SAMSUNG ELECTRONICS,Server,,IT,Offline
+45,NEX_046,Laptop,SAMSUNG ELECTRONICS,Kim Kyoung BUM,,R&D,Running
 46,NEX_047,Laptop,SAMSUNG ELECTRONICS,SẹoungKil,,PRESS,Running
 47,NEX_048,Laptop,SAMSUNG ELECTRONICS,Nguyễn Bá Dũng,NV2505007,Production,Running
 48,NEX_049,Laptop,SAMSUNG ELECTRONICS,Ryu JI Seung,CS,CS,Running
@@ -74,7 +74,7 @@
 73,NEX_HP_019,Desktop,HP 280 Pro G6 Microtower PC,Nguyễn Trọng Anh,NV2304001,Utility-EHS,Running
 74,NEX_HP_020,Desktop,Dell Inc Vostro 3710 0AD1,Phạm Thị Hằng,NV2302001,IQC,Running
 75,NEX_HP_021,Desktop,Dell Inc Vostro 3681 09B4,Nguyễn Văn Hưng,NV2404002,PRESS,Running
-76,NEX_HP_022,Desktop,Dell Inc Vostro 3681 09B4,Kho Rework ,,Production,Running
+76,NEX_HP_022,Desktop,Dell Inc Vostro 3681 09B4,Server,,IT,Running
 77,NEX_HP_023,Desktop, HP 280 Pro G6 Microtower PC,Kho Phế Liệu Press,,SCM,Running
 78,NEX_HP_024,Laptop,Dell Inc Inspiron 15 3511,Đặng thị tuyến,NV2301057,Sale,Running
 79,NEX_MES_001,Desktop, LENOVO 11T000AXVA,Ngô Quang Nhị,NV202305029,SCM,Running
@@ -121,7 +121,7 @@
 120,NEXVN_007,Laptop,HP Laptop 15s-fq2xxx,Server,,IT,Offline
 121,NEXVN_008,Laptop,HP Laptop 15s-fq2xxx,Ngô Thị Minh,NV2307028,IQC,Running
 122,NEXVN_009,Laptop,HP Laptop 15s-fq2xxx,Server,,IT,Offline
-123,NEXVN_010,Laptop,Dell Inc Vostro 3520,Vũ Khắc Quyết,"	NV2605003",CS,Running
+123,NEXVN_010,Laptop,Dell Inc Vostro 3520,Lương Văn Thuận,"	NV2606007",CS,Running
 124,NEXVN_011,Laptop,Dell Inc Vostro 3521,Hoàng Thị Thanh Ngân,NV2603002,IT,Running
 125,NEXVN_012,Laptop,Dell Inc Vostro 3520,Nguyễn Bá Lâm,NV2412003,Sanding,Running
 126,NEXVN_013,Laptop,Dell Inc Vostro 3523,Server,,IT,Offline
