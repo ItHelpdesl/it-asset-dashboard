@@ -7,7 +7,7 @@
 6,NEX_006,Laptop,Dell Inspiron 15 3511,Nguyễn Duy Trường,NV2301035,Utility-EHS,Running
 7,NEX_007,Laptop,SAMSUNG ELECTRONICS ,KIM HYUN IL,NV-221202,Tech_Support,Running
 8,NEX_008,Laptop,SAMSUNG ELECTRONICS ,Hoàng Văn Đăng ,NV2305053,IT,Running
-9,NEX_009,Desktop,HP Pro SFF 280 G9 Desktop PC,Màn hình SCM,,SCM,Running
+9,NEX_009,Desktop,HP Pro SFF 280 G9 Desktop PC,Máy chủ AD server ,,IT,Running
 10,NEX_010,Desktop,HP Pro SFF 280 G9 Desktop PC,( khái báo hải quan),,SCM,Running
 11,NEX_011,Desktop,HP Pro SFF 280 G9 Desktop PC,Nguyễn Thị Giang,NV2301032,Production,Running
 12,NEX_012,Desktop,HP Pro SFF 280 G9 Desktop PC,Bùi Thị Thu Trang,NV2308013,Production,Running
@@ -74,11 +74,11 @@
 73,NEX_HP_019,Desktop,HP 280 Pro G6 Microtower PC,Nguyễn Trọng Anh,NV2304001,Utility-EHS,Running
 74,NEX_HP_020,Desktop,Dell Inc Vostro 3710 0AD1,Phạm Thị Hằng,NV2302001,IQC,Running
 75,NEX_HP_021,Desktop,Dell Inc Vostro 3681 09B4,Nguyễn Văn Hưng,NV2404002,PRESS,Running
-76,NEX_HP_022,Desktop,Dell Inc Vostro 3681 09B4,Server,,IT,Running
+76,NEX_HP_022,Desktop,Dell Inc Vostro 3681 09B4,Màn hình SCM,,SCM,Running
 77,NEX_HP_023,Desktop, HP 280 Pro G6 Microtower PC,Kho Phế Liệu Press,,SCM,Running
 78,NEX_HP_024,Laptop,Dell Inc Inspiron 15 3511,Đặng thị tuyến,NV2301057,Sale,Running
 79,NEX_MES_001,Desktop, LENOVO 11T000AXVA,Ngô Quang Nhị,NV202305029,SCM,Running
-80,NEX_MES_002,Desktop, LENOVO 11T000AXVA,QC Đóng gói ,,QC,Offline
+80,NEX_MES_002,Desktop, LENOVO 11T000AXVA,QC Đóng gói ,,QC,Running
 81,NEX_MES_003,Desktop, LENOVO 11T000AXVA,Nguyễn Phú Thanh,NV2301027,PRESS,Running
 82,NEX_MES_004,Desktop, LENOVO 11T000AXVA,Hoàng Xuân Bắc,NV2302063,PQC,Running
 83,NEX_MES_005,Desktop, LENOVO 11T000AXVA,LINE 9,Line ,OQC,Running
