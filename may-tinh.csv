@@ -89,7 +89,7 @@
 88,NEX_MES_010,Desktop, LENOVO 11T000AXVA,Màn hinh AndonClient,Line ,OQC,Running
 89,NEX_MES_011,Desktop, LENOVO 11T000AXVA,LINE 5,Line ,OQC,Running
 90,NEX_MES_012,Desktop, LENOVO 11T000AXVA,Nguyễn Thị Hảo,NV2302062,OQC,Running
-91,NEX_MES_013,Desktop, LENOVO 11T000AXVA,Màn Hình Production,,Production,Running
+91,NEX_MES_013,Desktop, LENOVO 11T000AXVA,Nguyễn Đức Hùng,NV2606003,Production,Running
 92,NEX_MES_014,Desktop, LENOVO 11T000AXVA, Nguyễn Thị Hạnh,NV2306055, QA,Running
 93,NEX_MES_015,Desktop, LENOVO 11T000AXVA,Nguyễn Gia Toàn,NV2301054,Tech.Support,Running
 94,NEX_MES_016,Desktop, LENOVO 11T000AXVA,LINE 6,Line ,OQC,Running
@@ -110,8 +110,8 @@
 109,DESKTOP-92UDMH5,Laptop,SAMSUNG ELECTRONICS ,Kim Seok Yun,,Production,Running
 110,NEX_IT_SYSTEM,Laptop,SAMSUNG ELECTRONICS ,Hỏng,Hỏng,IT,Broken
 111,DESKTOP-H2HS37B,Laptop,SAMSUNG ELECTRONICS,Cho Yong Bae,,,Running
-112,NEX_NUC_002,Desktop,NUC7PJYHN,Phòng Sạch (Korean),Phòng Sạch,Phòng Sạch,Running
-113,NEX_NUC_001,Desktop,NUC7PJYHN,Server,,IT,Offline
+112,NEX_NUC_001,Desktop,NUC7PJYHN,Phòng Sạch (Korean),Phòng Sạch,Phòng Sạch,Running
+113,NEX_NUC_002,Desktop,NUC7PJYHN,Màn hình tổng Họp Production,,IT,Running
 114,NEXVN_001,Laptop,Dell Inc Vostro 3520,Lê Văn Anh,NV2306004,IT,Running
 115,NEXVN_002,Laptop,Dell Inc Vostro 3520,Nguyễn Thị Thái,NV2403002,HR-GA,Running
 116,NEXVN_003,Laptop,Dell Inc Vostro 3520,Nguyễn Văn Tiến,NV2407011,Production,Running
