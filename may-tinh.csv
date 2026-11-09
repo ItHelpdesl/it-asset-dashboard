@@ -53,12 +53,12 @@
 52,NEX_053,Laptop,SAMSUNG ELECTRONICS,JUNG SUNG KI,,BOSS,Running
 53,NEX_IT_M,Laptop,SAMSUNG ELECTRONICS,Heo Mun Haeng,NV2308010,IT,Running
 54,NEX_HP_001,Laptop,Dell Inc Vostro 15 3510,Vũ Văn Công ,NV2407006,IQC,Running
-55,NEX_HP_002,Laptop,Dell inc Inspiron 15 3511,Server ,,IT,Offline
+55,NEX_HP_002,Laptop,Dell inc Inspiron 15 3511,Nguyễn Thị Hảo,NV2302062,OQC,Running
 56,NEX_HP_003,Laptop,Dell Inc Latitude 3520, Nguyễn Thị Loan,NV2304016,QC,Running
 57,NEX_HP_004,Laptop,Dell Inc Latitude 3520,Bùi Ngọc Chư,NV2301037,R&D,Running
 58,NEX_HP_005,Laptop,Dell Inc Latitude 3520,SI ROOM,,,Running
 59,NEX_HP_006,Laptop,Dell Inc Latitude 3521,Server ,,IT,Offline
-60,NEX_HP_007,Laptop,Dell Inc Inspiron 15 3511,Nguyễn Thị Hảo,NV2302062,OQC,Running
+60,NEX_HP_007,Laptop,Dell Inc Inspiron 15 3511, ( Hỏng màn hình Ms. Hảo ),,IT,Broken
 61,NEX_HP_008,Laptop,  HP Pavilion Laptop 15-eg2xxx,Nguyễn Thị Phương (HR_GA),NV2301046,HR_GA,Running
 62,NEX_HP_009,Laptop,HP Pavilion Laptop 15-eg2xxx,Phạm Thị Thúy,NV2301023,Accouting,Running
 63,NEX_HP_010,Laptop,Dell Inc Inspiron 15 3511, Nguyễn Phú Thanh,NV2301027,Press,Running
@@ -70,8 +70,8 @@
 69,NEX_IQC_WATERMACHIN,Desktop,SAMSUNG ELECTRONICS.500TEA/500SEA,IQC ( phòng tin cậy ),IQC ( phòng tin cậy ),IQC ( phòng tin cậy ),Running
 70,NEX_HP_ACC,Laptop,Dell inc Inspiron 15 3511,Nguyễn Thị Thắng,NV2307064,Kế toán,Running
 71,NEX_X-RAY-PC,Desktop,Dell Inc.  OptiPlex 7010,IQC ( phòng tin cậy ),,QC,Running
-72,NEX_HP_018,Desktop,  To Be Filled By,Nguyễn Đăng Vũ,NV2503002,PRESS,Running
-73,NEX_HP_019,Desktop,HP 280 Pro G6 Microtower PC,Nguyễn Trọng Anh,NV2304001,Utility-EHS,Running
+72,NEX_HP_018,Desktop,  To Be Filled By,Ngô Huy Hoàn,NV2603003,PRESS,Running
+73,NEX_HP_019,Desktop,HP 280 Pro G6 Microtower PC,Lê Đăng Biên ,NV2607003,Utility-EHS,Running
 74,NEX_HP_020,Desktop,Dell Inc Vostro 3710 0AD1,Phạm Thị Hằng,NV2302001,IQC,Running
 75,NEX_HP_021,Desktop,Dell Inc Vostro 3681 09B4,Nguyễn Văn Hưng,NV2404002,PRESS,Running
 76,NEX_HP_022,Desktop,Dell Inc Vostro 3681 09B4,Màn hình SCM,,SCM,Running
