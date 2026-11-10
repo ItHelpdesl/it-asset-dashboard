@@ -26,7 +26,7 @@
 25,NEX_025,Desktop,HP Pro SFF 280 G9 Desktop PC,Nguyễn Trang Hà,NV2306010,OQC,Running
 26,NEX_026,Desktop,HP Pro SFF 280 G9 Desktop PC,SI ROOM,SI ROOM,SI ROOM,Running
 27,NEX_027,Desktop,HP Pro SFF 280 G9 Desktop PC, Nguyễn Thị Loan,NV2304016,QC,Running
-28,NEX_028,Desktop,HP Pro SFF 280 G9 Desktop PC,Vender GSR Vina,,,Running
+28,NEX_028,Desktop,HP Pro SFF 280 G9 Desktop PC,Line 7 (OPPO),,Production,Running
 29,NEX_029,Desktop,HP Pro SFF 280 G9 Desktop PC,Đỗ Thị Thuận,NV2302065,SCM,Running
 30,NEX_030,Laptop,Dell Inc Vostro 15 3510,Tuấn  GSR vina ,,GSR vina,Running
 31,NEX_032,Desktop,HP Pro SFF 280 G9 Desktop PC,Sanding,Sanding,Sanding,Running
@@ -83,7 +83,7 @@
 82,NEX_MES_004,Desktop, LENOVO 11T000AXVA,Hoàng Xuân Bắc,NV2302063,PQC,Running
 83,NEX_MES_005,Desktop, LENOVO 11T000AXVA,LINE 9,Line ,OQC,Running
 84,NEX_MES_006,Desktop, LENOVO 11T000AXVA,Nguyễn Thị Thủy ,NV2605002,R&D,Running
-85,NEX_MES_007,Desktop, LENOVO 11T000AXVA,Vender GSR Vina,,Vender GSR Vina,Running
+85,NEX_MES_007,Desktop, LENOVO 11T000AXVA,Line 6 (OPPO),,Production,Running
 86,NEX_MES_008,Desktop, LENOVO 11T000AXVA,Nguyễn Thị Hằng,NV2302004,R&D,Running
 87,NEX_MES_009,Desktop, LENOVO 11T000AXVA,Server (Hỏng),,IT,Broken
 88,NEX_MES_010,Desktop, LENOVO 11T000AXVA,Màn hinh AndonClient,Line ,OQC,Running
